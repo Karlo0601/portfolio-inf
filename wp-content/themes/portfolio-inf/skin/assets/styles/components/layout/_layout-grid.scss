@@ -1,0 +1,100 @@
+// .layout-grid {
+
+// }
+//Layout
+
+.layout {
+  position: relative;
+	width: 100%;
+	padding: $base-content-margin 0px;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+	background-color: $base-white-color;
+
+  @include modifier('full-width'){
+
+    .wrapper {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .container {
+      @include site-container();
+    }
+  }
+
+  @include modifier('wide'){
+
+    .wrapper {
+      max-width: $base-content-width;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .container {
+      @include site-container();
+    }
+  }
+
+  &-padding {
+
+		&--none {
+			padding: 0;
+		}
+		&--standard {
+			padding: $base-content-margin 0;
+		}
+		&--large {
+			padding: $base-content-margin * 2 0;
+
+			@include breakpoint($breakpoint_laptop){
+
+			}
+			@include breakpoint($breakpoint_desktop){
+
+			}
+			@include breakpoint($breakpoint_tablet){
+				padding: 45px 0;
+			}
+			@include breakpoint($breakpoint_mobile){
+				padding: 45px 0;
+			}
+			@include breakpoint($breakpoint_small){
+				padding: 45px 0;
+			}
+		}
+		&--extra-large {
+			padding: $base-content-margin * 3 0  $base-content-margin * 3 + 10px;
+
+			@include breakpoint($breakpoint_laptop){
+
+			}
+			@include breakpoint($breakpoint_desktop){
+
+			}
+			@include breakpoint($breakpoint_tablet){
+				padding: $base-content-margin + 10px 0;
+			}
+			@include breakpoint($breakpoint_mobile){
+				padding: $base-content-margin + 10px 0;
+			}
+			@include breakpoint($breakpoint_small){
+				padding: $base-content-margin + 10px 0;
+			}
+		}
+		&--bottom-none {
+			padding-bottom: 0;
+		}
+		&--top-none {
+			padding-top: 0;
+		}
+	}
+
+	&--skills, &--hero-image, &--cta {
+		position: relative;
+		background-color: transparent;
+	}
+	&--instagram-feed {
+		background-color: #f3f3f3;
+	}
+}

@@ -1,0 +1,17 @@
+<section class="layout layout--full-width layout--hero-image-single layout-padding--none"  style="background-image:url('{{ hero_image }}');">
+    {% if hero_image %}<div class="global__overlay"></div>{% endif %}
+    <div class="wrapper">
+        <div class="container">
+            <div class="hero-image-single__content">
+                {% if hero_image_title %}
+                    <h1 class="hero-image-single__title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">
+                        {{ hero_image_title }}
+                    </h1>
+                {% endif %}
+                {% if hero_date %}
+                    <span class="hero-image-single__date invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ hero_date }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

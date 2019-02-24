@@ -1,0 +1,137 @@
+//Some stuff here is out of BEM because it is used inside WP as helpers or modifiers
+
+.btn {
+  @extend %button-reset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: $base-font-family-second;
+  justify-content: center;
+  text-decoration: none;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid;
+  cursor: pointer;
+  border-radius: 0;
+
+  transition: {
+    property: background-color, color, border-color;
+    timing-function: ease-in;
+    duration: 0.3s;
+  }
+
+  @include button-sizes;
+  @include button-colors;
+
+  &--block {
+    display: flex;
+  }
+
+  @include modifier('hero'){
+      background: transparent;
+      border: 2px solid map-get($color-map, 'brand');
+      display: inline-block;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      margin: 0;
+      outline: none;
+      padding: 20px 75px;
+      overflow: hidden;
+      text-transform: uppercase;
+      z-index: 9;
+      transition: $transition;
+
+      @include breakpoint($breakpoint_laptop){
+
+      }
+      @include breakpoint($breakpoint_desktop){
+
+      }
+      @include breakpoint($breakpoint_tablet){
+
+      }
+      @include breakpoint($breakpoint_mobile){
+          padding: 15px 45px;
+      }
+      @include breakpoint($breakpoint_small){
+          padding: 15px 45px;
+      }
+
+      &:before{
+          content: attr(data-hover);
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 100%;
+          text-transform: uppercase;
+          letter-spacing: 3px;
+          font-weight: 600;
+          font-size: 18px;
+          opacity: 0;
+          transform: translate(-100%,-50%);
+          transition: $transition;
+
+          @include breakpoint($breakpoint_laptop){
+
+          }
+          @include breakpoint($breakpoint_desktop){
+
+          }
+          @include breakpoint($breakpoint_tablet){
+
+          }
+          @include breakpoint($breakpoint_mobile){
+              font-size: 16px;
+          }
+          @include breakpoint($breakpoint_small){
+              font-size: 16px;
+          }
+      }
+      span{
+          color: map-get($color-map, 'white');
+          text-transform: uppercase;
+          display: inline-block;
+          letter-spacing: 3px;
+          font-weight: 600;
+          font-size: 18px;
+          transition: all .3s ease-in-out;
+
+          @include breakpoint($breakpoint_laptop){
+
+          }
+          @include breakpoint($breakpoint_desktop){
+
+          }
+          @include breakpoint($breakpoint_tablet){
+
+          }
+          @include breakpoint($breakpoint_mobile){
+              font-size: 16px;
+          }
+          @include breakpoint($breakpoint_small){
+              font-size: 16px;
+          }
+      }
+      &:hover{
+          color: map-get($color-map, 'white');
+          background-color: transparent;
+          transition: $transition;
+
+          &:before{
+              color: map-get($color-map, 'white');
+              opacity: 1;
+              transform: translate(0,-50%);
+          }
+          span {
+              opacity: 0;
+              transform: translate(100%,0);
+              transition: $transition;
+          }
+      }
+  }
+}

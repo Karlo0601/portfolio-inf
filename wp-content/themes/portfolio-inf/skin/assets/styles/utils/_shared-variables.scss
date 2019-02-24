@@ -1,0 +1,83 @@
+
+//Base
+$base-font-family: 'Oswald', Arial, sans-serif;
+$base-font-family-second: 'Raleway', Arial, sans-serif;
+$base-icons-font-family: 'portfolio-inf';
+
+// Container
+$base-content-padding: 15px;
+$base-content-margin: 30px;
+$base-content-margin-large: 60px;
+$base-content-full-width: 1200px;
+$base-content-width: $base-content-full-width + ($base-content-padding*2);
+
+//Typography
+$typography-map: (
+  mobile: (
+    giant:          72px,
+    huge:           42px,
+    biggest:        40px,
+    bigger:         32px,
+    big:            28px,
+    largest:        24px,
+    larger:         22px,
+    large:          20px,
+    default:        18px,
+    medium:         16px,
+    small:          14px,
+    smaller:        12px,
+    tiny:           11px
+  )
+);
+
+// Buttons
+$button-size-map: (
+  mobile: (
+    default: (
+      text-size: 14px,
+      line-height: 1.4,
+      height: 68px,
+    )
+  )
+);
+
+//Section
+$section-spacing-map: (
+  mobile: (
+    default:    40px,
+    medium:     80px,
+    small:      20px,
+    no-spacing: 0
+  )
+);
+
+//WP admin bar
+$wpAdminBar-sm: 782px;
+
+// Forms
+$form-field-spacing: 30px;
+
+// Input
+$input-height-map: (
+  mobile: (
+    default: (
+      text-size: 18px,
+      height: 57px,
+    )
+  )
+);
+
+
+/**
+*
+* Breakpoints
+*
+**/
+$breakpoint_small : 440;
+$breakpoint_mobile : 640;
+$breakpoint_tablet : 768;
+$breakpoint_desktop : 1024;
+$breakpoint_laptop : 1366;
+
+//Transition
+$transition: all ease 0.3s;

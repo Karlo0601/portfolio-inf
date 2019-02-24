@@ -1,0 +1,61 @@
+.skills {
+  &__content {
+      position: relative;
+      z-index: 9;
+
+      .global__top-title {
+          color: $base-white-color;
+      }
+      .global__title {
+          color: $base-white-color;
+      }
+  }
+  &__container {
+      padding: 0 20px;
+      position: relative;
+      z-index: 9;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+  }
+
+  &__single-item {
+    max-width: calc(100% / 6 );
+    width: 100%;
+    @include breakpoint($breakpoint_laptop){
+
+    }
+    @include breakpoint($breakpoint_desktop){
+
+    }
+    @include breakpoint($breakpoint_tablet){
+
+    }
+    @include breakpoint($breakpoint_mobile){
+        width: 100%;
+        margin: 0 0 15px;
+        float: none;
+        display: block;
+    }
+    @include breakpoint($breakpoint_small){
+        width: 100%;
+        margin: 0 0 15px;
+        float: none;
+        display: block;
+    }
+    &--counter {
+        color: $base-white-color;
+        font-size: 36px;
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+        font-family: $base-font-family;
+    }
+    &--title {
+        color: $base-white-color;
+        font-family: $base-font-family-second;
+        text-align: center;
+        font-weight: 400;
+    }
+  }
+}
