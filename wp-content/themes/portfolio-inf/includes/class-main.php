@@ -128,6 +128,7 @@ class Main {
     $general    = new Theme\General();
     $pagination = new Theme\Pagination();
     $acf        = new Acf_Fields();
+    $ajax       = new Theme\Send_Email();
 
     // Enque styles and scripts.
     $this->loader->add_action( 'wp_enqueue_scripts', $theme, 'enqueue_styles' );

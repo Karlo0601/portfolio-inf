@@ -1,0 +1,91 @@
+.section-404 {
+
+  &__container {
+    @include site-container();
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 15% 50px;
+    text-align: center;
+
+    @include breakpoint($breakpoint_laptop){
+
+		}
+		@include breakpoint($breakpoint_desktop){
+
+		}
+		@include breakpoint($breakpoint_tablet){
+
+		}
+		@include breakpoint($breakpoint_mobile){
+      padding: 45% 50px;
+		}
+		@include breakpoint($breakpoint_small){
+      padding: 45% 50px;
+    }
+
+  }
+
+  &__title {
+    font-family: $base-font-family-second;
+    font-size: 132px;
+    line-height: 1.4;
+
+    @include breakpoint($breakpoint_laptop){
+
+		}
+		@include breakpoint($breakpoint_desktop){
+
+		}
+		@include breakpoint($breakpoint_tablet){
+
+		}
+		@include breakpoint($breakpoint_mobile){
+      @include text-size(giant);
+		}
+		@include breakpoint($breakpoint_small){
+      @include text-size(giant);
+		}
+
+    &::first-letter {
+      color: $base-rouge-color;
+    }
+  }
+
+  &__subtitle {
+    font-family: $base-font-family;
+    @include text-size(biggest);
+    font-weight: 500;
+    line-height: 1.4;
+    color: $base-dark-color;
+
+    @include breakpoint($breakpoint_laptop){
+
+		}
+		@include breakpoint($breakpoint_desktop){
+
+		}
+		@include breakpoint($breakpoint_tablet){
+
+		}
+		@include breakpoint($breakpoint_mobile){
+      @include text-size(largest);
+		}
+		@include breakpoint($breakpoint_small){
+      @include text-size(largest);
+		}
+  }
+
+  &__description {
+    @include text-size(medium);
+    font-family: $base-font-family-second;
+    line-height: 1.4;
+    color: $base-dark-color;
+  }
+  .btn--brand {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

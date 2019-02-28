@@ -1,4 +1,7 @@
 .about {
+  &__container {
+      @include site-container();
+  }
 
   &__content {
         padding-bottom: 2%;
@@ -8,6 +11,24 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+
+
+      @include breakpoint($breakpoint_laptop){
+
+      }
+      @include breakpoint($breakpoint_desktop){
+
+      }
+      @include breakpoint($breakpoint_tablet){
+
+      }
+      @include breakpoint($breakpoint_mobile){
+          flex-flow: column;
+      }
+      @include breakpoint($breakpoint_small){
+          flex-flow: column;
+      }
+
     }
     &__image-container {
       box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.3);
@@ -36,18 +57,14 @@
 
       }
       @include breakpoint($breakpoint_mobile){
-          position: relative;
-          left: inherit;
-          top: inherit;
+          margin-right: 0;
           width: 100%;
-          height: 250px;
+          height: auto;
       }
       @include breakpoint($breakpoint_small){
-          position: relative;
-          left: inherit;
-          top: inherit;
+          margin-right: 0;
           width: 100%;
-          height: 250px;
+          height: auto;
       }
     }
     &__list {

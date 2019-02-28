@@ -1,7 +1,7 @@
 .global {
 
     &__top-title {
-        border-right: 1px solid map-get($color-map, 'brand');
+        border-right: 2px solid map-get($color-map, 'brand');
         display: inline-block;
         font-family: $base-font-family-second;
         font-weight: 300;
@@ -47,7 +47,7 @@
                 bottom: 0;
                 content: '';
                 display: block;
-                height: 1px;
+                height: 2px;
                 left: 20px;
                 position: absolute;
                 width: 110%;

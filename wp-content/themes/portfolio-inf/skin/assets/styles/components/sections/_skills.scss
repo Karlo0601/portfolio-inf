@@ -1,7 +1,35 @@
 .skills {
+  &__container {
+    @include site-container();
+    position: relative;
+    z-index: 9;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include breakpoint($breakpoint_laptop){
+
+    }
+    @include breakpoint($breakpoint_desktop){
+
+    }
+    @include breakpoint($breakpoint_tablet){
+
+    }
+    @include breakpoint($breakpoint_mobile){
+        flex-flow: column;
+        justify-content: center;
+    }
+    @include breakpoint($breakpoint_small){
+        flex-flow: column;
+        justify-content: center;
+    }
+  }
   &__content {
       position: relative;
       z-index: 9;
+      width: 100%;
 
       .global__top-title {
           color: $base-white-color;
@@ -10,18 +38,12 @@
           color: $base-white-color;
       }
   }
-  &__container {
-      padding: 0 20px;
-      position: relative;
-      z-index: 9;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-  }
+
 
   &__single-item {
     max-width: calc(100% / 6 );
     width: 100%;
+
     @include breakpoint($breakpoint_laptop){
 
     }
@@ -34,14 +56,12 @@
     @include breakpoint($breakpoint_mobile){
         width: 100%;
         margin: 0 0 15px;
-        float: none;
-        display: block;
+        max-width: 100%;
     }
     @include breakpoint($breakpoint_small){
         width: 100%;
         margin: 0 0 15px;
-        float: none;
-        display: block;
+        max-width: 100%;
     }
     &--counter {
         color: $base-white-color;

@@ -4,7 +4,7 @@
   height: map_get($key, height);
 }
 
-// Input sizes items from map without breakpoints
+// Input sizes items fro wm mapithout breakpoints
 @mixin input-sizes-simple($map: $input-height-map) {
   @each $key, $value in $map {
     @if $key == 'default' {

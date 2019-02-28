@@ -1,20 +1,30 @@
 import {ScrollToElement} from './scroll-to';
 import {Lazyloading} from './lazyloading';
-import { Waypoint } from './appear';
+import WaypointInit from './appear';
+import {mobileMenu} from './mobile-menu';
+import { contactAjax } from './ajax-form';
 
 $(function() {
   const scrollTo = new ScrollToElement();
   const lazyLoading = new Lazyloading();
-  const waypoint = new Waypoint();
 
   // -------------------------------------------------------------
   // scrollTo
   scrollTo.scrolltoGlobalElement();
   scrollTo.scrolltoTopElement();
+  scrollTo.scrolltoPageElement();
 
   // -------------------------------------------------------------
   // AppearAnimations
-  waypoint.WaypointInit();
+  WaypointInit();
+
+  // -------------------------------------------------------------
+  // Mobile Menu
+  mobileMenu();
+
+  // -------------------------------------------------------------
+  // Contact ajax form submit
+  contactAjax();
 
   // -------------------------------------------------------------
   // lazyLoading

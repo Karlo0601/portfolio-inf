@@ -7,25 +7,23 @@
 
 ?>
 <!-- start:footer -->
-<!-- <a href="#html, body" class="scroll-to-top js-scroll-to-top"><svg class="svg-arrow--up-dims"><use xlink:href="<?php // echo esc_url( get_template_directory_uri() ); ?>/skins/assets/images/icons.svg#arrow--up"></use></svg></a> -->
+<a href="#html, body" class="scroll-to-top js-scroll-to-top"><span class="scroll-to-top__arrow-up"></span></a>
 <footer id="footer" class="footer footer--site">
-  <div class="wrapper">
-    <div class="container clearfix">
+    <div class="footer__container clearfix">
       <?php
         $site_logo = get_field( 'footer_logo', 'options' );
         $copyright = get_field( 'copyright', 'options' );
       ?>
-      <div class="footer__logo-container col-13">
-        <img src="<?php echo esc_url( $site_logo['url'] ); ?>" alt="" class="footer__logo">
+      <div class="footer__logo">
+        <img src="<?php echo esc_url( $site_logo['url'] ); ?>" alt="" class="footer__logo-image">
       </div>
 
-      <div class="copyright col-23 col-last">
+      <div class="footer__copyright">
         <?php
-        echo $copyright;
+        echo '<p>' . esc_html( wp_strip_all_tags( $copyright ) ) . '</p>';
         ?>
       </div>
 
     </div>
-  </div>
 </footer>
 <!-- end:footer -->

@@ -6,7 +6,42 @@ $content-style: (
   'table-bg-color': $base-white-color,
   'table-border-color': $base-silver-color,
 );
+h1 {
+  @include text-size(biggest);
+  line-height: 1.2;
+  margin: 0;
 
+}
+
+h2 {
+  @include text-size(bigger);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h3 {
+  @include text-size(big);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h4 {
+  @include text-size(largest);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h5 {
+  @include text-size(large);
+  line-height: 1.2;
+  margin: 0;
+}
+
+h6 {
+  @include text-size(medium);
+  line-height: 1.2;
+  margin: 0;
+}
 /* stylelint-disable selector-no-type */
 .content-style {
   @include text-size(default);

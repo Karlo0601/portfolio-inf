@@ -2,6 +2,27 @@
 .footer {
   &__container {
     @include site-container();
+
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row;
+    align-items: center;
+
+    @include breakpoint($breakpoint_laptop){
+
+		}
+		@include breakpoint($breakpoint_desktop){
+
+		}
+		@include breakpoint($breakpoint_tablet){
+
+		}
+		@include breakpoint($breakpoint_mobile){
+			flex-flow: column;
+		}
+		@include breakpoint($breakpoint_small){
+			flex-flow: column;
+		}
   }
 }
 .footer {
@@ -10,74 +31,15 @@
 
 	&--site {
 		color: #ffffff;
-		background: #151515;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		z-index: -1002;
-	}
-	&__logo-container {
-		line-height: 24px;
-
-		@include breakpoint($breakpoint_laptop){
-
-		}
-		@include breakpoint($breakpoint_desktop){
-
-		}
-		@include breakpoint($breakpoint_tablet){
-
-		}
-		@include breakpoint($breakpoint_mobile){
-			width: 100%;
-			text-align: center;
-			margin-bottom: 15px;
-		}
-		@include breakpoint($breakpoint_small){
-			width: 100%;
-			text-align: center;
-			margin-bottom: 15px;
-		}
+		background: $base-dark-color;
+		position: relative;
 	}
 	&__logo {
 		max-width: 200px;
 		width: 100%;
-		height: auto;
-		display: inline-block;
-		margin-right: 0;
-		vertical-align: middle;
-	}
-}
+    height: auto;
 
-.copyright {
-	display: inline-block;
-	text-align: center;
-
-	@include breakpoint($breakpoint_laptop){
-
-	}
-	@include breakpoint($breakpoint_desktop){
-
-	}
-	@include breakpoint($breakpoint_tablet){
-
-	}
-	@include breakpoint($breakpoint_mobile){
-		width: 100%;
-		text-align: center;
-	}
-	@include breakpoint($breakpoint_small){
-		width: 100%;
-		text-align: center;
-	}
-
-	p {
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 24px;
-		text-align: right;
-
-		@include breakpoint($breakpoint_laptop){
+    @include breakpoint($breakpoint_laptop){
 
 		}
 		@include breakpoint($breakpoint_desktop){
@@ -87,30 +49,87 @@
 
 		}
 		@include breakpoint($breakpoint_mobile){
+			width: 100%;
 			text-align: center;
-			font-size: 12px;
+			margin-bottom: 15px;
 		}
 		@include breakpoint($breakpoint_small){
+			width: 100%;
 			text-align: center;
-			font-size: 12px;
+			margin-bottom: 15px;
 		}
+  }
+  &__logo-image {
+    max-width: 100%;
+    width: 100%;
+  }
+  &__copyright {
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
 
-		span {
-			color: map-get($color-map, 'brand');
-		}
-	}
+    @include breakpoint($breakpoint_laptop){
+
+    }
+    @include breakpoint($breakpoint_desktop){
+
+    }
+    @include breakpoint($breakpoint_tablet){
+
+    }
+    @include breakpoint($breakpoint_mobile){
+      width: 100%;
+      text-align: center;
+    }
+    @include breakpoint($breakpoint_small){
+      width: 100%;
+      text-align: center;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: right;
+      margin: 0;
+
+      @include breakpoint($breakpoint_laptop){
+
+      }
+      @include breakpoint($breakpoint_desktop){
+
+      }
+      @include breakpoint($breakpoint_tablet){
+
+      }
+      @include breakpoint($breakpoint_mobile){
+        text-align: center;
+        font-size: 12px;
+      }
+      @include breakpoint($breakpoint_small){
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
 }
+
+
 
 .scroll-to-top {
   height: 60px;
   width: 60px;
   background: map-get($color-map, 'brand');
-	display: none;
-	text-align: center;
-	position: fixed;
-  bottom: 100px;
-	right: 5%;
-	z-index: 999;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 60px;
+  right: 5%;
+  z-index: 999;
+  opacity: 0;
+  transition: all ease-out 0.3s;
 
 	@include breakpoint($breakpoint_laptop){
 
@@ -119,67 +138,38 @@
 
 	}
 	@include breakpoint($breakpoint_tablet){
-		right: 60px;
+		right: 5%;
 	}
 	@include breakpoint($breakpoint_mobile){
-		right: 16px;
-		bottom: 125px;
+		right: 5;
+		bottom: 60px;
 		height: 40px;
-    	width: 40px;
+    width: 40px;
 	}
 	@include breakpoint($breakpoint_small){
-		right: 16px;
-		bottom: 125px;
+		right: 5;
+		bottom: 60px;
 		height: 40px;
-    	width: 40px;
+    width: 40px;
 	}
 
+  &.active {
+    opacity: 1;
+    transition: all ease-in 0.3s;
+  }
 	&:hover {
-		svg {
-			fill: map-get($color-map, 'primary');
-			transition: $transition;
-
-			use {
-				fill: map-get($color-map, 'primary');
-				transition: $transition;
-			}
-		}
+    background-color: darken(map-get($color-map, 'brand'), 10%);
+    transition: all ease-in 0.3s;
 	}
 
-	svg {
-		fill: $base-white-color;
-		width: 20px;
-		height: 60px;
-		stroke-width: 1px;
-		stroke: map-get($color-map, 'brand');
-		transition: $transition;
-
-		@include breakpoint($breakpoint_laptop){
-
-		}
-		@include breakpoint($breakpoint_desktop){
-
-		}
-		@include breakpoint($breakpoint_tablet){
-
-		}
-		@include breakpoint($breakpoint_mobile){
-			width: 15px;
-			height: 40px;
-
-		}
-		@include breakpoint($breakpoint_small){
-			width: 15px;
-			height: 40px;
-
-		}
-
-		use {
-			fill: $base-white-color;
-			width: 20px;
-			height: auto;
-			transition: $transition;
-		}
-	}
+  &__arrow-up {
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid $base-white-color;
+    border-top: 2px solid $base-white-color;
+    display: block;
+    transform: rotate(45deg);
+    margin-top: 10px;
+  }
 
 }

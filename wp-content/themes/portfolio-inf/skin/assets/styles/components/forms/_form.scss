@@ -1,7 +1,66 @@
+.contact {
+
+  &__container {
+      @include site-container();
+  }
+}
 .form {
   position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include breakpoint($breakpoint_laptop){
+
+  }
+  @include breakpoint($breakpoint_desktop){
+
+  }
+  @include breakpoint($breakpoint_tablet){
+
+  }
+  @include breakpoint($breakpoint_mobile){
+     flex-flow: column;
+     justify-content: center;
+  }
+  @include breakpoint($breakpoint_small){
+     flex-flow: column;
+     justify-content: center;
+  }
 }
 
 .field {
   padding-bottom: $form-field-spacing;
+}
+
+.form-group {
+    max-width: 48%;
+    margin-right: 0%;
+    margin-bottom: $base-content-margin;
+    width: 100%;
+
+    @include breakpoint($breakpoint_laptop){
+
+    }
+    @include breakpoint($breakpoint_desktop){
+
+    }
+    @include breakpoint($breakpoint_tablet){
+
+    }
+    @include breakpoint($breakpoint_mobile){
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+    @include breakpoint($breakpoint_small){
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    &--full {
+      max-width: 100%;
+    }
 }

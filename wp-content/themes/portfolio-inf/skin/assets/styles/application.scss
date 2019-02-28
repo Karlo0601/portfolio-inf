@@ -20,6 +20,7 @@
 
 // Icons
 @import 'components/icons/icons';
+@import 'components/icons/social-icons';
 
 // Typography
 @import 'components/typography/typography';
@@ -42,6 +43,8 @@
 // Header
 @import 'components/header/wp-admin-bar';
 @import 'components/header/header';
+@import 'components/header/hamburger-icon';
+@import 'components/header/menu';
 
 // Footer
 @import 'components/footer/footer';
@@ -64,6 +67,7 @@
 
 // Template parts
 // @import 'components/parts';
+@import 'components/parts/page-404';
 
 // Single
 @import 'components/single';

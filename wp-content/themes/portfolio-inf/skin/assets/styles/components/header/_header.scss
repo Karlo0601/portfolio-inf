@@ -42,7 +42,11 @@
 		}
 		.container {
 			overflow: hidden;
-			padding: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-content: center;
 
 		  @include breakpoint($breakpoint_laptop){
 
@@ -99,38 +103,42 @@
 }
 
 .logo {
-      float: left;
-      margin: 0px;
-      line-height: 52px;
-      font-size: 1px;
-      max-width: 250px;
-      display: block;
-      width: 100%;
+
+  margin: 0px;
+  line-height: 52px;
+  font-size: 1px;
+  max-width: 250px;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: $transition;
+
+  @include breakpoint($breakpoint_mobile) {
       height: auto;
-      transition: $transition;
+      max-width: 180px;
+  }
 
-      @include breakpoint($breakpoint_mobile) {
-          height: auto;
-          max-width: 180px;
-      }
-      &--center {
-          float: none;
-          max-width: 180px;
-          margin: 0 auto;
-      }
-      &__link {
-          display: inline-block;
-          color: #ffffff;
+  &__link {
+      display: inline-block;
+      color: #ffffff;
+      width: 100%;
+
+      img {
           width: 100%;
-
-          img {
-              width: 100%;
-              height: auto;
-              vertical-align: middle;
-          }
-
-          &:hover {
-              color: #eeeeee;
-          }
+          height: auto;
+          vertical-align: middle;
       }
-    }
+
+      &:hover {
+          color: #eeeeee;
+      }
+  }
+}
+.menu-open {
+  .logo, .header.sticky .logo {
+		z-index: 1002;
+		position: relative;
+		//filter: invert(0%);
+		transition: filter ease-out 0.3s;
+	}
+}

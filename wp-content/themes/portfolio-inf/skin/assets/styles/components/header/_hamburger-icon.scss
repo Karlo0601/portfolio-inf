@@ -1,0 +1,108 @@
+/** Hamburger Icon **/
+
+$hamburger: (
+  'bar-width': 30px,
+  'bar-height': 2px,
+  'bar-spacing': 8px,
+  'color': $base-white-color,
+  'background-color': $base-rouge-color,
+
+);
+.resp-buttons {
+	background-color: map-get($hamburger, 'background-color');
+	display: inline-block;
+	line-height: 0px;
+	margin: 0px 0px 0px auto;
+	padding: 15px;
+	position: relative;
+	transition: $transition;
+	z-index: 1002;
+
+    @include breakpoint($breakpoint_mobile){
+        display: inline-block;
+	}
+}
+.hamburger-menu {
+  margin: 0;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  order: 2;
+  flex-grow: 0;
+	display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+	justify-content: flex-end;
+
+	&__bar,
+	&__bar:after,
+	&__bar:before {
+		width: map-get($hamburger, 'bar-width');
+		height: map-get($hamburger, 'bar-height');
+	}
+
+	&__bar {
+		position: relative;
+		background-color: map-get($hamburger, 'color');
+		transition: all 0ms 0.3s;
+
+	&.animate {
+		background-color: rgba(171, 147, 121, 0);
+	}
+	}
+
+	&__bar:before {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: map-get($hamburger, 'bar-spacing');
+		background-color: map-get($hamburger, 'color');
+		transition: bottom 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	&__bar:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: map-get($hamburger, 'bar-spacing');
+		background-color: map-get($hamburger, 'color');
+		transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	&__bar.animate:after {
+		top: 0;
+		background-color: map-get($hamburger, 'color');
+		transform: rotate(45deg);
+		transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+
+	&__bar.animate:before {
+		bottom: 0;
+		background-color: map-get($hamburger, 'color');
+		transform: rotate(-45deg);
+		transition: bottom 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+}
+.menu-open {
+
+	.hamburger-menu {
+
+		&__bar {
+			background-color: transparent;
+			transition: $transition;
+		}
+		&__bar:after {
+			top: 0;
+			background-color: map-get($hamburger, 'color');
+			transform: rotate(45deg);
+			transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+
+		&__bar:before {
+			bottom: 0;
+			background-color: map-get($hamburger, 'color');
+			transform: rotate(-45deg);
+			transition: bottom 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+	}
+}
