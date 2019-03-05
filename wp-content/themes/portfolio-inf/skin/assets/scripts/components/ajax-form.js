@@ -3,27 +3,33 @@
  * @return void
  */
 export function contactAjax() {
-  var button = document.getElementById('contact-form__submit-button'),
-      formId = document.getElementById('contact-form');
-  if ($(button).length){
+  const button = document.getElementById('contact-form__submit-button');
+  const formId = document.getElementById('contact-form');
+  if ($(button).length) {
     button.addEventListener('click', () => {
-      var form_data = $(formId).serializeArray();
+      const formData = $(formId).serializeArray();
 
       // Here we add our nonce
-      form_data.push({ "name": "security", "value": themeLocalization.ajax_nonce });
+      formData.push({
+        name: 'security',
+        value: themeLocalization.ajax_nonce,
+      });
 
       $.ajax({
         url: themeLocalization.ajaxurl, // Here goes our WordPress AJAX endpoint.
         type: 'POST',
-        data: form_data,
+        data: formData,
         dataType: 'json',
-        beforeSend: function () {
+        beforeSend() {
+
           // You could do an animation here...
           $(button).prop('disabled', true);
         },
-        success: function (response) {
+        success(response) {
+
           // You can craft something here to handle the message return
           if (response.status === 'success') {
+
             // Here, you could trigger a success message
             $(formId).reset();
             $(button).prop('disabled', false);
@@ -31,18 +37,18 @@ export function contactAjax() {
           }
           if (response.status === 'error') {
             $(button).prop('disabled', false);
-            $('#' + response.field + '').addClass('invalid');
+            const field = document.getElementById(response.field);
+            $(field).addClass('invalid');
           }
         },
-        fail: function (err) {
-          // You can craft something here to handle an error if something goes wrong when doing the AJAX request.
-          alert("There was an error: " + err);
+        fail(err) {
 
-        }
+          // You can craft something here to handle an error if something goes wrong when doing the AJAX request.
+          window.console(`There was an error:${err}!`);
+
+        },
       });
       return false;
     });
   }
-
-
-};
+}

@@ -1,4 +1,4 @@
-import { debounce } from './../helpers/debounce';
+import {debounce} from './../helpers/debounce';
 
 export class ScrollToElement {
   constructor(
@@ -20,7 +20,7 @@ export class ScrollToElement {
     $(this.menuElement).click((event) => {
       const target = $(event.currentTarget).attr('href');
 
-      if (target.match("^#")) {
+      if (target.match('^#')) {
         event.preventDefault();
         if (target.length) {
           $(this.body).removeClass('menu-open');

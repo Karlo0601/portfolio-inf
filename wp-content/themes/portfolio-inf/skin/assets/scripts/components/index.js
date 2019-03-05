@@ -1,8 +1,8 @@
 import {ScrollToElement} from './scroll-to';
 import {Lazyloading} from './lazyloading';
-import WaypointInit from './appear';
+import waypointInit from './appear';
 import {mobileMenu} from './mobile-menu';
-import { contactAjax } from './ajax-form';
+import {contactAjax} from './ajax-form';
 
 $(function() {
   const scrollTo = new ScrollToElement();
@@ -16,7 +16,7 @@ $(function() {
 
   // -------------------------------------------------------------
   // AppearAnimations
-  WaypointInit();
+  waypointInit();
 
   // -------------------------------------------------------------
   // Mobile Menu
