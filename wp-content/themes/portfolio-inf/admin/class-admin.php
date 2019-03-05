@@ -79,5 +79,12 @@ class Admin extends Config {
 
       return;
   }
-
+  /**
+   * Move Yoast to bottom.
+   *
+   * @since 1.0.0
+   */
+  public function yoasttobottom() {
+    return 'low';
+  }
 }

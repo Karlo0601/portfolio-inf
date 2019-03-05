@@ -51,13 +51,14 @@
 
 
 // Article
-// @import 'components/article/article-list';
+@import 'components/article/article-list';
 // @import 'components/article/article-grid';
 // @import 'components/article/article-empty';
 
 // Layout
-// @import 'components/layout/layout-list';
-@import 'components/layout/layout-grid';
+/* @import 'components/layout/layout-list';
+@import 'components/layout/layout-grid'; */
+@import 'components/layout/layout';
 
 // Sections
 // @import 'components/sections/';
@@ -67,7 +68,11 @@
 
 // Template parts
 // @import 'components/parts';
-@import 'components/parts/page-404';
+@import 'components/parts/page-hero';
+
+// Pages
+@import 'components/pages/page-404';
+@import 'components/pages/page-blog';
 
 // Single
 @import 'components/single';

@@ -1,0 +1,18 @@
+.blog {
+
+  .container {
+    @include site-container();
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+  &__content {
+    max-width: calc(70% - #{$base-content-margin} );
+    width: 100%;
+    margin-right: $base-content-margin;
+    display: flex;
+    flex-flow: column;
+    align-content: flex-start;
+  }
+}

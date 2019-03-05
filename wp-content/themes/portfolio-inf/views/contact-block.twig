@@ -1,6 +1,6 @@
-<section id="contact" class="layout layout--wide layout--contact layout-padding--extra-large" data-parallax="scroll" {% if contact_background_image %}data-image-src="{{ contact_background_image.url }}"{% endif %}>
+<section id="contact" class="contact layout layout--wide layout-padding--extra-large" data-parallax="scroll" {% if contact_background_image %}data-image-src="{{ contact_background_image.url }}"{% endif %}>
   {% if contact_background_image %}<div class="global__overlay"></div>{% endif %}
-  <div class="contact__container">
+  <div class="container">
       <div class="contact__content">
           {% if contact_top_title and contact_title %}
               <h4 class="global__top-title invisible" data-appear-effect="slideInLeft" data-appear-delay="150">{{ contact_top_title }}</h4><br>

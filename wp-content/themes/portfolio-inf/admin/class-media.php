@@ -37,7 +37,8 @@ class Media {
    * @since 1.0.0
    */
   public function add_custom_image_sizes() {
-    add_image_size( 'listing', 570, 320, true );
+    add_image_size( 'listing', 285, 175, true );
+    add_image_size( 'page_hero', 1920, 400, true );
   }
 
   /**

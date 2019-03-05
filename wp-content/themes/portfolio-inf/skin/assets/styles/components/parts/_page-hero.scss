@@ -1,0 +1,17 @@
+.page-hero {
+
+
+  &__content {
+    padding: 125px 0 40px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    z-index: 5;
+  }
+  &__title {
+    color: $base-white-color;
+    font-weight: 700;
+  }
+}

@@ -1,6 +1,5 @@
 .skills {
   &__container {
-    @include site-container();
     position: relative;
     z-index: 9;
     display: flex;

@@ -8,6 +8,14 @@
 use Portfolio_Inf\Helpers\General_Helper;
 
 $logo_img = General_Helper::get_manifest_assets_data( 'images/logo.svg' );
+if ( $post_item ) {
+  $image['image']  = $post_item['image']['image'];
+  $image['height'] = $post_item['image']['height'];
+  $image['width']  = $post_item['image']['width'];
+  $post_title      = $post_item['title'];
+} else {
+  $post_title = get_the_title();
+}
 ?>
 
 <!-- Google Rich Snippets -->
@@ -19,7 +27,7 @@ $logo_img = General_Helper::get_manifest_assets_data( 'images/logo.svg' );
       "@type": "WebPage",
       "@id": "https://google.com/article"
     },
-    "headline": "<?php the_title(); ?>",
+    "headline": "<?php echo esc_html( $post_title ); ?>",
   "image": {
     "@type": "ImageObject",
     "url": "<?php echo esc_html( $image['image'] ); ?>",

@@ -94,6 +94,7 @@ class Main {
     $this->loader->add_filter( 'get_user_option_admin_color', $admin, 'set_admin_color_based_on_env' );
     $this->loader->add_action( 'after_setup_theme', $admin, 'add_options_menu_in_admin' );
     $this->loader->add_action( 'admin_enqueue_scripts', $admin, 'enqueue_scripts' );
+    $this->loader->add_filter( 'wpseo_metabox_prio', $admin, 'yoasttobottom' );
 
     // Login page.
     $this->loader->add_filter( 'login_headerurl', $login, 'custom_login_url' );
@@ -128,8 +129,7 @@ class Main {
     $general    = new Theme\General();
     $pagination = new Theme\Pagination();
     $acf        = new Acf_Fields();
-    $ajax       = new Theme\Send_Email();
-
+    // $ajax       = new Theme\Send_Email();.
     // Enque styles and scripts.
     $this->loader->add_action( 'wp_enqueue_scripts', $theme, 'enqueue_styles' );
     $this->loader->add_action( 'wp_enqueue_scripts', $theme, 'enqueue_scripts' );
@@ -138,7 +138,7 @@ class Main {
     $this->loader->add_filter( 'use_default_gallery_style', $theme, '__return_false' );
 
     // ACF.
-    $this->loader->add_action( 'after_setup_theme', $acf, 'acf_fields_group' );
+    // $this->loader->add_action( 'after_setup_theme', $acf, 'acf_fields_group' );.
 
     /**
      * Optimizations

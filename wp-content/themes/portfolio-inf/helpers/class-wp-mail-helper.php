@@ -10,7 +10,7 @@
 namespace Portfolio_Inf\Helpers;
 
 /**
- * WP_Mail
+ * WP_Mail_Helper
  *
  * A simple class for creating and
  * sending Emails using WordPress
@@ -123,7 +123,7 @@ class WP_Mail_Helper {
    * @return Object $this
    */
   public static function init() {
-    return new self;
+    return new self();
   }
 
   /**
